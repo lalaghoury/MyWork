@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Br Architects</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        html,
+        body {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+
+        .header {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .nav {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 25px 20px;
+            background-color: #FFFFFF;
+            position: fixed;
+            z-index: 999;
+        }
+
+        .nav .nav-logo span {
+            font-weight: 700;
+        }
+
+        .pad {
+            padding: 10px;
+        }
+
+        .pad:hover {
+            background-color: #CCCCCC;
+            cursor: pointer;
+        }
+
+        .nav .nav-logo {
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .header-content {
+            width: 100%;
+            height: calc(100% - 80px);
+            position: relative;
+        }
+
+        .header-img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .header-img img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .header-text {
+            position: absolute;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .header-text {
+            color: #fff;
+            font-size: 3vw;
+        }
+
+        .header-text p {
+            color: #fff;
+            background: #000;
+            padding: 5px;
+            display: inline;
+        }
+
+        .projects {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 26px;
+        }
+
+        .pro-head {
+            padding: 15px 5px 25px 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .pro-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin-top: 25px;
+        }
+
+        .wrap {
+            position: relative;
+            width: 23.5%;
+            margin: 17px 7px;
+        }
+
+        .wrap img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .sec-wrap img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .about {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 26px;
+        }
+
+        .about-head h3 {
+            padding: 15px 5px 25px 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .about-head p {
+            padding: 25px 5px 25px 5px;
+        }
+
+        .sec-wrap button {
+            width: 100%;
+            padding: 15px 15px;
+            background-color: #e1d8d8;
+            border: none;
+        }
+
+        .sec-wrap button:hover {
+            cursor: pointer;
+            background-color: #CCCCCC;
+        }
+
+        .sec-wrap {
+            position: relative;
+            width: 23.5%;
+            margin: 17px 7px;
+            height: 20%;
+        }
+
+        .sec-wrap h1 {
+            padding: 10px 0;
+            font-weight: 500;
+        }
+
+        .sec-wrap h5 {
+            padding: 10px 0;
+            font-weight: 400;
+        }
+
+        .sec-wrap p {
+            padding: 10px 0;
+            font-weight: 300;
+        }
+
+        .about-cont {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .contact {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 26px;
+        }
+
+        .con-head h3 {
+            padding: 15px 5px 25px 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .con-head p {
+            padding: 25px 5px 25px 5px;
+        }
+
+        .con-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .con-form form input {
+            padding: 10px 5px;
+            margin: 8px;
+            border-radius: 0px solid transparent;
+        }
+
+        .con-form button {
+            padding: 10px 15px;
+            margin: 8px;
+            border: none;
+            background: #000;
+            color: #fff;
+        }
+
+        .map {
+            margin: 8px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            width: 100%;
+            height: 70%;
+        }
+
+        .map img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .footer p {
+            text-align: center;
+            padding: 30px 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        @media screen and (max-width:1000px) {
+            .pro-wrap {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .wrap {
+                width: 45%;
+            }
+
+            .about-cont {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+            .sec-wrap {
+                width: 45%;
+            }
+
+            * h3 {
+                font-size: 25px;
+            }
+
+            * h5 {
+                font-size: 18px;
+
+                font-weight: 500;
+            }
+
+            * p {
+                font-size: 16px;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .nav-links {
+                display: none;
+            }
+
+            .wrap {
+                width: 100%;
+            }
+
+            .sec-wrap {
+                width: 100%;
+            }
+
+            .header-text span {
+                display: none;
+                transform: translate(-50%, -50%)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="header">
+            <div class="nav">
+                <div class="nav-logo">
+                    <div class="pad"><span>B R</span> Architects</div>
+                </div>
+                <div class="nav-links"><a class="pad" href="#Projects">Projects</a><a class="pad"
+                        href="#About">About</a><a class="pad" href="#Contact">Contact</a></div>
+            </div>
+            <div class="header-content">
+                <div class="header-img">
+                    <img src="https://www.w3schools.com/w3images/architect.jpg" alt="img">
+                </div>
+                <div class="header-text">
+                    <p>B R</p> <span>Architects</span>
+                </div>
+            </div>
+        </div>
+        <div class="projects">
+            <div class="pro-head">
+                <h3>Projects</h3>
+            </div>
+            <div class="pro-wrap">
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house5.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Summer House</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house2.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Brick House</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house3.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Renovated</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house4.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Barn House</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house4.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Summer House</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house5.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Brick House</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house4.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Renovated</h5>
+                    </div>
+                </div>
+                <div class="wrap"><img src="https://www.w3schools.com/w3images/house3.jpg" alt="img">
+                    <div class="wrap-text">
+                        <h5>Barn House</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about-head">
+                <h3>About</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="about-cont">
+                <div class="sec-wrap">
+                    <img src="https://www.w3schools.com/w3images/team2.jpg" alt="img">
+                    <h1>John Doe</h1>
+                    <h5>CEO & Founder</h5>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <button>Contact</button>
+                </div>
+                <div class="sec-wrap">
+                    <img src="https://www.w3schools.com/w3images/team1.jpg" alt="img">
+                    <h1>John Doe</h1>
+                    <h5>Architect</h5>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <button>Contact</button>
+                </div>
+                <div class="sec-wrap">
+                    <img src="https://www.w3schools.com/w3images/team3.jpg" alt="img">
+                    <h1>Mike Ross</h1>
+                    <h5>Architect</h5>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <button>Contact</button>
+                </div>
+                <div class="sec-wrap">
+                    <img src="https://www.w3schools.com/w3images/team4.jpg" alt="img">
+                    <h1>Dan Star</h1>
+                    <h5>Architect</h5>
+                    <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    </p>
+                    <button>Contact</button>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="con-head">
+                <h3>Contact</h3>
+                <p>Lets get in touch and talk about your next project.</p>
+            </div>
+            <div class="con-form">
+                <form action="">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Subject">
+                    <input type="text" placeholder="Comment">
+                </form>
+                <button class="pad">SEND MESSAGE</button>
+            </div>
+            <div class="map">
+                <img src="https://www.w3schools.com/w3images/map.jpg" alt="img">
+            </div>
+        </div>
+        <div class="footer">
+            <p>Powered By Aasil Ghoury</p>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
